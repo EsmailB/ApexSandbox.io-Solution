@@ -4,8 +4,9 @@ public Id insertCourse(String name, String details, Integer credits) {
     apxio__Course__c course = new apxio__Course__c();
     course.name = name;
     course.apxio__Course_Details__c = details;
+    Set <String> valid = new Set<String>{'1', '2', '3', '4'};
     
-    if (course.apxio__Credits__c >=1 && course.apxio__Credits__c <=4)
+    if (course.apxio__Credits__c in valid)
     {
         course.apxio__Credits__c = credits;
     

@@ -13,5 +13,5 @@ public String registerStudent(String name, String phone, String email) {
                                          FROM apxio__Student__c 
                                          WHERE id = stu.id];
 
-    return stu.apxio__Registration_Number__c;
+    return student.apxio__Registration_Number__c;
 }

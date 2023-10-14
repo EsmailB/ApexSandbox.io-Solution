@@ -1,0 +1,11 @@
+public String aOrAn(String word) {
+    //code here
+    String init = word.substring(0,1);
+
+    //if (init in ['a', 'e', 'i', 'o', 'u'])
+    if ((init == 'a') || (init == 'e') || (init == 'i') ||
+        (init == 'o') || (init == 'u'))
+        return 'an ' + word;
+    
+    return 'a ' + word;
+}

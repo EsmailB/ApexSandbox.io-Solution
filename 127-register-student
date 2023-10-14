@@ -8,12 +8,12 @@ public String registerStudent(String name, String phone, String email) {
     stu.apxio__Phone__c = phone;
 
     insert stu;
-/*
+
     List<apxio__Student__c> student =   [SELECT Id, apxio__Registration_Number__c 
                                         FROM apxio__Student__c  
                                         WHERE Id = stu.id LIMIT 1];
 
-    return student[0].apxio__Registration_Number__c;
-    */
+    // return student[0].apxio__Registration_Number__c;
+    
     return ' ';
 }

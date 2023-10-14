@@ -17,6 +17,6 @@ public Id insertCourse(String name, String details, Integer credits) {
         insert(course);
         return course.id;
     }
-    else
-        return null;
+    
+    return null;
 }

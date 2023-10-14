@@ -9,9 +9,9 @@ public String registerStudent(String name, String phone, String email) {
 
     insert stu;
 
-    apxio__Student__c student =   [SELECT Id, apxio__Registration_Number__c 
+    List<apxio__Student__c> student =   [SELECT Id, apxio__Registration_Number__c 
                                          FROM apxio__Student__c 
                                          WHERE id = stu.id] LIMIT 1;
 
-    return student.apxio__Registration_Number__c;
+    return student[0].apxio__Registration_Number__c;
 }

@@ -9,6 +9,6 @@ public List<apxio__Student__c> selectActiveStudents() {
             stu.add(s);
     }
 
-    if (!stus.isEmpty())
-        return stus;
+
+    return stus;
 }

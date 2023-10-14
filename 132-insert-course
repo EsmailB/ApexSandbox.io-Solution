@@ -4,11 +4,15 @@ public Id insertCourse(String name, String details, Integer credits) {
     apxio__Course__c course = new apxio__Course__c();
     course.name = name;
     course.apxio__Course_Details__c = details;
+
+    // docs also include 0
+    // apxio__Credits__c	Picklist	Valid values include 0, 1, 2, 3, and 4
+
     Set <String> valid = new Set<String>{'0', '1', '2', '3', '4'};
     
     if (valid.contains(course.apxio__Credits__c))
     {
-        course.apxio__Credits__c = credits;
+        course.apxio__Credits__c = String.valueOf(credits);
     
         insert course;
         return course.id;

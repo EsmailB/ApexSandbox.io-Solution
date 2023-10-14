@@ -1,0 +1,19 @@
+public Integer fibonacci(Integer n) {
+    //code here
+
+    if (n == 1 || n == 2)
+        return 1;
+
+    Integer f1 = 1;
+    Integer f2 = 1;
+    Integer result = f1 + f2;
+
+    for(Integer i = 3; i < n; i++)
+    {
+        f1 = f2;
+        f2 = result;
+        result = f1 + f2;
+    }
+
+    return result;
+}

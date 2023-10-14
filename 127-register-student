@@ -11,7 +11,7 @@ public String registerStudent(String name, String phone, String email) {
 
     List<apxio__Student__c> student =   [SELECT Id, apxio__Registration_Number__c 
                                         FROM apxio__Student__c  
-                                        WHERE Id = stu.id LIMIT 1];
+                                        WHERE Id = stu.id];
     if (!student.isEmpty())
         return student[0].apxio__Registration_Number__c;
     else

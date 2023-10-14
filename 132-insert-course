@@ -12,7 +12,7 @@ public Id insertCourse(String name, String details, Integer credits) {
     
     // if (valid.contains(course.apxio__Credits__c))
 
-    if (credits >= 1 || credits <=4)
+    if (credits >= 0 || credits <=4)
     {
         course.apxio__Credits__c = String.valueOf(credits);
     

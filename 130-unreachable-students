@@ -1,0 +1,14 @@
+public List<apxio__Student__c> selectUnreachableStudents() {
+    // code here
+
+    // list of active students
+    List<apxio__Student__c> stus = new List<apxio__Student__c>();
+    
+    // Make sure the students have a value in the Id and Name fields.
+    for(apxio__Student__c s : [SELECT name, Id FROM apxio__Student__c WHERE apxio__Active__c = true ORDER BY Name ASC])
+        if (s.apxio__Email__c == null && s.apxio__Phone__c == null)
+            stus.add(s);
+
+
+    return stus;
+}

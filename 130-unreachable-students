@@ -7,7 +7,7 @@ public List<apxio__Student__c> selectUnreachableStudents() {
     // Make sure the students have a value in the Id and Name fields.
     for(apxio__Student__c s : [SELECT name, Id, apxio__Email__c, apxio__Phone__c
                                FROM apxio__Student__c 
-                               WHERE apxio__Active__c = true AND apxio__Email__c = null AND apxio__Email__c = null
+                               WHERE apxio__Active__c = true AND apxio__Email__c = null AND apxio__Phone__c = null
                                ORDER BY Name ASC])
         // if (s.apxio__Email__c == null && s.apxio__Phone__c == null)
         stus.add(s);

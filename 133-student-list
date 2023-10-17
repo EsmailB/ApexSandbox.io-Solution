@@ -12,6 +12,6 @@ public void insertStudents(List<String> studentNames, List<String> studentEmails
         stus.add(s);
     }
 
-    if (s.size() > 0)
-        insert s;
+    if (stus.size() > 0)
+        insert stus;
 }

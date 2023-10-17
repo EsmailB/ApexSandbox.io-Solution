@@ -11,7 +11,7 @@ public void createCourseAndClass(String name, String description) {
 
     apxio__Class__c child_class = new apxio__Class__c();
     child_class.name = name;
-    apxio__Course__c = course.Id;
+    child_class.apxio__Course__c = course.Id;
 
     if (!String.isBlank(description))
         {

@@ -4,7 +4,7 @@ public void createCourseAndClass(String name, String description) {
     apxio__Course__c course = new apxio__Course__c();
     course.name = name;
 
-    if (!description.isBlank())
+    if (!isBlank(description))
         course.apxio__Course_Details__c = description;
 
     insert course;
@@ -13,7 +13,7 @@ public void createCourseAndClass(String name, String description) {
     child_class.name = name;
     apxio__Course__c = course.Id;
 
-    if (!description.isBlank())
+    if (!isBlank(description))
         {
             child_class.apxio__Course_Details__c = description.left(255);
         }

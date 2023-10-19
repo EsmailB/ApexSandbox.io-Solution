@@ -9,6 +9,6 @@ public Id classFromCourse(String courseName) {
             SELECT id, Name from apxio__Course__c where Name = :courseName];
 
     new_class.apxio__Course__c = courses[0].Id;
-    return courses.Id;
-
+    insert new_class;
+    return new_class.Id;
 }

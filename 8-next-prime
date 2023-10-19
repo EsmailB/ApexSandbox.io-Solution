@@ -1,7 +1,8 @@
 public Integer nextPrime(Integer num) {
     //code here
 
-    for(Integer i = num; !isPrime(i); i++)
+    integer i = num;
+    for(; !isPrime(i); i++)
         ;
 
     return i;

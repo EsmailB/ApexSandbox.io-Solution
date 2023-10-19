@@ -1,0 +1,10 @@
+public List<Integer> positiveIntegers(List<Integer> numbers) {
+    //code here
+    List<Integer> posints = new List<Integer>();
+
+    for(Integer i = 1; i < nums.size(); i++)
+        if(numbers[i] > 0)
+            posints.add(numbers[i]);
+    
+    return posints;
+}

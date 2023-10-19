@@ -1,11 +1,11 @@
 public Integer nextPrime(Integer num) {
     //code here
 
-    integer i = num;
+    integer i = num+1;
     while(!isPrime(i))
         i++;
 
-    return i-1;
+    return i;
  
 }
 

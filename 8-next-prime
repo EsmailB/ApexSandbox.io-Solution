@@ -2,8 +2,8 @@ public Integer nextPrime(Integer num) {
     //code here
 
     integer i = num;
-    for(; !isPrime(i); i++)
-        ;
+    while(!isPrime(i))
+        i++;
 
     return i;
  

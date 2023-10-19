@@ -4,9 +4,12 @@ public List<String> getNamesInAscOrder(List<String> accountNames)
 
     if (accountNames == null)
         return null;
-        
+
+    return accountNames.sort();
+    /*
     List<String> result = accountNames;
     result.sort();
     return result;
+    */
 }
 

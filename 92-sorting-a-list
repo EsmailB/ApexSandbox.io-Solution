@@ -2,7 +2,12 @@ public List<String> getNamesInAscOrder(List<String> accountNames)
 {
     //code here
 
+    if (accountNames.size() > 0)
+    {
     List<String> result = accountNames;
     result.sort();
     return result;
+    }
+
+    return null;
 }

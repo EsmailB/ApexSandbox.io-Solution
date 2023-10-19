@@ -6,10 +6,9 @@ public Id classFromCourse(String courseName) {
     new_class.Name = courseName;
 
     List <apxio__Course__c> courses = [
-            SELECT id, Name from apxio__Course__c where Name = :courseName
-        ];
+            SELECT id, Name from apxio__Course__c where Name = :courseName];
 
-    new_class.apxio__Course__c = courses[0];
+    new_class.apxio__Course__c = courses[0].Id;
     return courses.Id;
 
 }

@@ -1,9 +1,6 @@
 public Id classFromCourse(String courseName) {
     // code here
 
-
-    
-
     List <apxio__Course__c> courses = [
             SELECT id, Name from apxio__Course__c where Name = :courseName];
 

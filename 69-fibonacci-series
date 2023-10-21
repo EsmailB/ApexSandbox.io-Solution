@@ -1,0 +1,33 @@
+public List<Integer> fibonacciSeries(Integer n) {
+    //code here
+    List<Integer> fib_list = new List<Integer>();
+        
+        for(Integer i = 1; i <= n; i++)
+            {
+                fib_list.add(fibonacci(i));
+                System.debug('>>>> ' + fib_list);
+            }
+
+            System.debug('>>>> ' + fib_list.size());
+        return fib_list;
+}
+
+public static Integer fibonacci(Integer n) {
+        //code here
+    
+        if (n == 1 || n == 2)
+            return 1;
+    
+        Integer f1 = 1;
+        Integer f2 = 1;
+        Integer result = f1 + f2;
+    
+        for(Integer i = 3; i < n; i++)
+        {
+            f1 = f2;
+            f2 = result;
+            result = f1 + f2;
+        }
+    
+        return result;
+    }

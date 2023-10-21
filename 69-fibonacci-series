@@ -3,12 +3,8 @@ public List<Integer> fibonacciSeries(Integer n) {
     List<Integer> fib_list = new List<Integer>();
         
         for(Integer i = 1; i <= n; i++)
-            {
-                fib_list.add(fibonacci(i));
-                System.debug('>>>> ' + fib_list);
-            }
+            fib_list.add(fibonacci(i));
 
-            System.debug('>>>> ' + fib_list.size());
         return fib_list;
 }
 

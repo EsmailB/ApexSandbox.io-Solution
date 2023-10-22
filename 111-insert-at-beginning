@@ -4,6 +4,7 @@ public void insertAtStart(String cityName, List<String> cities) {
         cities.add(cityName);
     else
     {
+        // should have looked at the list functions first :)
         cities.add(cities[cities.size()-1]);
 
         for(Integer i = cities.size()-2; i > 0; i--)

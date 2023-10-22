@@ -10,7 +10,6 @@ public void insertAtStart(String cityName, List<String> cities) {
         for(Integer i = cities.size()-2; i > 0; i--)
             cities[i] = cities[i-1];
 
-
         cities[0] = cityName;
     }   
 }

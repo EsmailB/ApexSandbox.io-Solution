@@ -1,8 +1,5 @@
 public boolean isSorted(List<Integer> numbers) {
-    //code here
-   
-    boolean sorted = false;
-    // assume it's sorted descending
+
     if (isAscending(numbers) || isDescending(numbers))
         return true;
     

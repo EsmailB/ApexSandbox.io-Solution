@@ -1,14 +1,10 @@
 public Integer secondLargest(List<Integer> numbers) {
     //code here
-    Integer num = -2147483647 - 1;
-    if (numbers.size() < 2)
-        return num;
-    
-    // change to set to eliminate duplicates
-    Set<Integer> num_set = new Set<Integer>(numbers);
-    // change back to list so I can sort - not sure I could re-use numbers
-    List<Integer> new_list = new List<Integer>(num_set);
-    new_list.sort();
+        // change to set to eliminate duplicates
+        Set<Integer> num_set = new Set<Integer>(numbers);
 
-    return new_list[new_list.size()-2];
+        // change back to numbers so I can sort
+        List<Integer> new_list = new List<Integer>(num_set);
+        new_list.sort();
+        return new_list[new_list.size()-2];
 }

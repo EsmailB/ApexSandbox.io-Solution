@@ -2,7 +2,7 @@ public Boolean containsDuplicates(List<Integer> nums) {
     //code here
     Set<Integer> int_set = new Set<Integer>(nums);
 
-    if (num.size() == int_set.size())
+    if (nums.size() == int_set.size())
         return false;
     
     return true;

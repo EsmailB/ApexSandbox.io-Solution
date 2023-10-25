@@ -4,10 +4,9 @@ public Integer secondLargest(List<Integer> numbers) {
     if (numbers.size() < 2)
         return num;
     
-
     // change to set to eliminate duplicates
     Set<Integer> num_set = new Set<Integer>(numbers);
-
+    // change back to list so I can sort - not sure I could re-use numbers
     List<Integer> new_list = new List<Integer>(num_set);
     new_list.sort();
 

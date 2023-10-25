@@ -10,5 +10,5 @@ public Boolean containsDuplicates(List<Integer> nums) {
     */
 
     // shorter version but perhaps not as readable
-    return (nums.size() != int_set.size())
+    return nums.size() != int_set.size();
 }

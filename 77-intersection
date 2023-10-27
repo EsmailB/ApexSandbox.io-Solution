@@ -1,0 +1,10 @@
+public Set<Integer> setIntersection(Set<Integer> set1, Set<Integer> set2) {
+    //code here
+    Set<Integer> newset = new Set<Integer>();
+    
+    for(Integer num: set1)
+        if (set2.contains(num))
+            newset.add(num);
+
+    return newset;
+}

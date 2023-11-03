@@ -5,9 +5,7 @@ public Integer maxConsecutiveOnes(Integer[] numbers) {
 
     for(Integer i = 0; i < numbers.size(); i++)
     {
-        Integer num = numbers[i];
-        System.debug('>>>> ' + num);
-        if (num == 0)
+        if (numbers[i] == 0)
             count = 0;
         else {
             count++;

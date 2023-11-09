@@ -6,25 +6,17 @@ public Map<String, Decimal> industrySummary(List<Account> accounts) {
     System.debug('>>>> starting');
     for(Account a: accounts)
     {
-      
         if ((a.Industry == null) || (a.AnnualRevenue == null))
             continue;
 
         if (result.containsKey(a.Industry))
         {
-            Decimal cur_rev = 0.0;
-
-            if (result.get(a.Industry) != null)
-                cur_rev = result.get(a.Industry);
-
-            Decimal new_rev = a.AnnualRevenue + cur_rev;
+            Decimal new_rev = a.AnnualRevenue + result.get(a.Industry);
             result.put(a.Industry, new_rev);
         }
         else 
-        {
             result.put(a.Industry, a.AnnualRevenue);
-        }
-
     }
+
     return result;
 }

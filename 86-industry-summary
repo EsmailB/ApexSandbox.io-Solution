@@ -6,8 +6,8 @@ public Map<String, Decimal> industrySummary(List<Account> accounts) {
     System.debug('>>>> starting');
     for(Account a: accounts)
     {
-        if ((a.Industry == null) || (a.AnnualRevenue == null))
-            continue;
+ //       if ((a.Industry == null) || (a.AnnualRevenue == null))
+ //           continue;
 
         if (result.containsKey(a.Industry))
         {

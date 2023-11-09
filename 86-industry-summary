@@ -1,0 +1,45 @@
+public Map<String, Decimal> industrySummary(List<Account> accounts) {
+    //code here
+        
+        Map <String, Decimal> result = new Map<String, Decimal>();
+
+        System.debug('>>>> starting');
+        for(Account a: accounts)
+        {
+            /*
+            if the industry isn't in the map add it and the revenu
+            if the industry is in the mapp, add the current revneu to 
+               the revenu in the map alread
+            */
+
+            System.debug('\t>>>> in loop');
+         
+            if ((a.Industry == null) || (a.AnnualRevenue == null))
+                continue;
+
+            if (result.containsKey(a.Industry))
+            {
+                Decimal cur_rev = 0.0;
+
+                if (result.get(a.Industry) != null)
+                    cur_rev = result.get(a.Industry);
+
+                Decimal new_rev = a.AnnualRevenue + cur_rev;
+                System.debug('>>>> new_rev' + new_rev);
+                result.put(a.Industry, new_rev);
+            }
+            else 
+            {
+                System.debug('>>>> else ' + a.Industry + ' / ' + a.AnnualRevenue);
+                result.put(a.Industry, a.AnnualRevenue);
+            }
+
+        }
+
+        System.debug('>>>> -- ending');
+        System.debug('>>>> ' + result.size());
+        System.debug('>>>> ' + result);
+
+        return result;
+    }
+}

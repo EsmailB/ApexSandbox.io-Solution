@@ -1,6 +1,6 @@
 public Boolean isKeyAccount(Account a) {
     //code here
-    
+
         Boolean ret_val = false;
 
         switch on a.Industry
@@ -14,7 +14,7 @@ public Boolean isKeyAccount(Account a) {
                     ret_val = true;
             }
             when 'Retail' {
-                if (a.AnnualRevenue >= 2009000)
+                if (a.AnnualRevenue >= 2000000)
                     ret_val = true; 
             }   
             when else {

@@ -14,9 +14,8 @@ public Map<String, List<Case>> casesByType(List<Case> cases) {
                         result.get(c.Type).add(c);                        
                     }
                 else // create entry and add to list
-                    result.put(c.Type, new List<Case>{c})  ;
+                    result.put(c.Type, new List<Case>{c});
             }
         }
         return result;
     }
-}

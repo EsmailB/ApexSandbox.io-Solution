@@ -8,7 +8,9 @@ public Map<String, List<Case>> casesByType(List<Case> cases) {
             {
                 if (result.containsKey(c.Type)) // add to list
                     {
-                        result.get(c.Type).add(c);
+                        List<Case> tmp = result.get(c.Type);
+                        tmp.add(c);
+                        result.put(c.Type, tmp);
                     }
                 else // create entry and add to list
                     result.put(c.Type, new List<Case>{c})  ;

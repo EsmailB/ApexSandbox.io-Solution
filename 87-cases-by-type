@@ -4,18 +4,17 @@ public Map<String, List<Case>> casesByType(List<Case> cases) {
 
         for(Case c: casesByType)
         {
-            if (c.Type != 'null')
+              if (c.Type != 'null')
             {
                 if (result.containsKey(c.Type)) // add to list
                     {
-                        List<String> tmp = result.get(c.Type);
-                        tmp.add(c.Subject);
+                        List<Case> tmp = result.get(c.Type);
+                        tmp.add(c);
                         result.put(c.Type, tmp);
                     }
                 else // create entry and add to list
-                    result.put(c.Type, new List<String>{c.Subject})  ;
+                    result.put(c.Type, new List<Case>{c})  ;
             }
-        }
 
         return result;
     }

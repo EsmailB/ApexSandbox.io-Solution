@@ -17,7 +17,7 @@ public List<Account> checkAccounts(List<Account> accounts)
         }
         catch(NullPointerException ex)
         {
-            throw IllegalArgumentException('accounts should not be null');  
+            throw new IllegalArgumentException('accounts should not be null');  
         }
         
         return la;

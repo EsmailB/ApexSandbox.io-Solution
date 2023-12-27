@@ -7,12 +7,12 @@ public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> cont
        return result;
     
     if (accounts != null)
-    for(SObject s: accounts)
-        result.add(s);
+        for(SObject s: accounts)
+            result.add(s);
 
     if (contacts != null)   
-    for(SObject s: contacts)
-        result.add(s);
+        for(SObject s: contacts)
+            result.add(s);
 
     return result;
 }

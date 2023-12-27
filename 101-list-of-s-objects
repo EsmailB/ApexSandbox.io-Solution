@@ -1,13 +1,16 @@
 public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> contacts)
 {
-// code here
+    // code here
     List<SObject> result = new List<SObject>();
+
     if (accounts == null && contacts == null)
        return result;
     
+    if (accounts != null)
     for(SObject s: accounts)
         result.add(s);
 
+    if (contacts != null)   
     for(SObject s: contacts)
         result.add(s);
 

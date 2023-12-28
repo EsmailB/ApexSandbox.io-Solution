@@ -13,7 +13,6 @@ public class Stack {
         else
             s.add(0, obj);
     }
-    }
     
     public Object pop() {
         //implement pop   #################

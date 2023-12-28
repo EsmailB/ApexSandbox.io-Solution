@@ -9,7 +9,7 @@ public class Stack {
     public void push(Object obj) {
         //implement push  ###############
         if (s.size() == 0)
-            a.add(obj);
+            s.add(obj);
         else
             s.add(0, obj);
     }

@@ -8,7 +8,11 @@ public class Stack {
     
     public void push(Object obj) {
         //implement push  ###############
-        s.add(0, obj);
+        if (s.size() == 0)
+            a.add(obj);
+        else
+            s.add(0, obj);
+    }
     }
     
     public Object pop() {

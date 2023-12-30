@@ -1,9 +1,8 @@
 public Boolean isPalindrome(String str){
     //code here
-    str = str.toLowerCase();
     List<String> letters = new List<String>();
 
-    for (String c : str.split(''))
+    for (String c : str.toLowerCase().split(''))
         if (c.isAlphanumeric())
             letters.add(c);
 

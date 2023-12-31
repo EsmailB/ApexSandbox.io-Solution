@@ -1,0 +1,14 @@
+public boolean isAnagram(String s1, String s2) {
+    //Code here
+    if (s1.length() != s2.length())
+        return false;
+    
+    Set<String> set_s1 = new Set<String>(s1.split(''));
+    List<String> list_s2 = s2.split('');
+    
+    if (set_s1.containsAll(list_s2))
+        return true;
+    else 
+        return false;
+    }
+}

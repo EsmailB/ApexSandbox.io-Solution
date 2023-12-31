@@ -3,13 +3,27 @@ public boolean isAnagram(String s1, String s2) {
 
     if ((s1 == null || s2 == null) || s1.length() != s2.length())
         return false;
+        
+    List<String> list1 = s1.split('');
+    Map<String, Integer> freq1 = new Map<String, Integer>();
     
-    Set<String> set_s1 = new Set<String>(s1.split(''));
-    List<String> list_s2 = s2.split('');
+    for (String c : list1)
+        if (freq1.containsKey(c))
+            freq1.put(c, freq1.get(c)+1);
+        else 
+            freq1.put(c, 1);
+
+    List<String> list2 = s2.split('');
+    Map<String, Integer> freq2 = new Map<String, Integer>();
     
-    if (set_s1.containsAll(list_s2))
-        return true;
+    for (String c : list2)
+        if (freq2.containsKey(c))
+            freq2.put(c, freq2.get(c)+1);
+        else 
+            freq2.put(c, 1);
+
+    if (freq1.equals(freq2))
+        return true;    
     else 
         return false;
-    
 }

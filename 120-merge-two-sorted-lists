@@ -3,5 +3,6 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
 
     List<Integer> li = new List<Integer>(list1);
     li.addAll(list2);
-    return li.sort();
+    li.sort();
+    return li;
 }

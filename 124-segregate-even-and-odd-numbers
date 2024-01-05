@@ -1,47 +1,40 @@
 public static void segregateEvenOdd(List<Integer> numbers){
     //code here
-        Integer size = numbers.size();
-        Integer oddpos = size - 1;
-        Integer tmp; // used for swapping
+    Integer size = numbers.size();
+    Integer oddpos = size - 1;
+    Integer tmp; // used for swapping
 
-        for(Integer i = 0; i < size && i < oddpos; i++)
-        {
-            System.debug('>> ----------------------- ');
-            System.debug('>> cur    : ' + numbers[i]);
-            System.debug('>> numbers: ' + numbers);
-
-            if (isOdd(numbers[i])) // odd, swap positions
+    for(Integer i = 0; i < size && i < oddpos; i++)
+    {
+        if (isOdd(numbers[i])) // odd, swap positions
+            {
+                while (oddpos >= 0 && isOdd(numbers[oddpos]))
+                    oddpos--;
+                
+                if (oddpos >= 0)
                 {
-                    while (oddpos >= 0 && isOdd(numbers[oddpos]))
-                        oddpos--;
-                    
-                    if (oddpos >= 0)
-                    {
-                        tmp = numbers[i]; // odd number
-                        System.debug('>> odd - swapping ' + numbers[i] + ' / ' + numbers[oddpos]); 
-                        numbers[i] = numbers[oddpos]; // even number
-                        numbers[oddpos] = tmp;
-                        oddpos--;
-                        System.debug('>> nums: ' + numbers);
-                        System.debug('>> oddpos: ' + oddpos);
-                    }   
-                }
-        }
+                    tmp = numbers[i]; // odd number
+                    numbers[i] = numbers[oddpos]; // even number
+                    numbers[oddpos] = tmp;
+                    oddpos--;
+                }   
+            }
+    }
 }
 
 
-    public  Boolean isOdd(Integer n)
-    {
-        if (Math.mod(n, 2) != 0)
-            return true;
-        
-        return false;
-    }
+public  Boolean isOdd(Integer n)
+{
+    if (Math.mod(n, 2) != 0)
+        return true;
+    
+    return false;
+}
 
-    public  Boolean isEven(Integer n)
-    {
-        if (!isOdd(n))
-            return true;
-        
-        return false;
-    }
+public  Boolean isEven(Integer n)
+{
+    if (!isOdd(n))
+        return true;
+    
+    return false;
+}

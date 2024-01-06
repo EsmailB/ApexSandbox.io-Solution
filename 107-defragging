@@ -9,8 +9,8 @@ public void defragging(Integer[] memory)
             if(memory[i] == -1) // add it to the end of the list, then delete the element
             {
                 System.debug('>> pos: ' + i);
-                memory.add(memory[i]);
-                memory.remove(i);
+                //memory.add(memory[i]);
+                memory.add(memory.remove(i));
                 i--;
             }
             j++;

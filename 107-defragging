@@ -1,12 +1,9 @@
-public void defragging(Integer[] memory)
-{
-        Integer i = 0;
-        for(Integer j = 0; j < memory.size(); j++)
-        {
-            if(memory[i] == -1) // add it to the end of the list, then delete the element
-                memory.add(memory.remove(i--));
+public void defragging(Integer[] memory) {
+    Integer i = 0;
+    for(Integer j = 0; j < memory.size(); j++) {
+        if(memory[i] == -1) //add it to end of list, then delete the element
+            memory.add(memory.remove(i--));
 
-            i++;
-        }
-    
+        i++;
+    }
 }

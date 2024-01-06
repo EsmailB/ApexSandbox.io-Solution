@@ -8,5 +8,5 @@ public void defragging(Integer[] memory)
 
             i++;
         }
-    }
+    
 }

@@ -6,6 +6,5 @@ public void defragging(Integer[] memory)
             {
                 //memory.add(memory[i]);
                 memory.add(memory.remove(i));
-                i--;
             }
 }

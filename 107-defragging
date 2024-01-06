@@ -1,10 +1,21 @@
 public void defragging(Integer[] memory)
 {
-    // code here
-      for(Integer i = 0; i < memory.size(); i++)
-            if(memory[i] == -1) // add it to the end of the list, then delete the element
+        Integer size = memory.size();
+        Integer i = 0;
+        Integer j = 0;
+        while (j < size)
+        {
+            System.debug('>>>> ' + i + ' ' + memory[i]);
+            if(memory[i] <= -1) // add it to the end of the list, then delete the element
             {
-                //memory.add(memory[i]);
-                memory.add(memory.remove(i));
+                System.debug('>> pos: ' + i);
+                memory.add(memory[i]);
+                memory.remove(i);
+                i--;
             }
+            j++;
+            i++;
+            System.debug('>>>> ' + memory);
+            System.debug('-----------' );
+        }
 }

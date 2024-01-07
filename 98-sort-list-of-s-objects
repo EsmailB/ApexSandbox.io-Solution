@@ -1,6 +1,9 @@
 public List<Account> getAccounts(List<Account> accounts) {
     // code here
 
+    if (accounts == null)
+        return null;
+
     List<AcctWrapper> la = new List<AcctWrapper>();
 
     for (Account a: accounts)

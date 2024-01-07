@@ -16,6 +16,7 @@ public List<Account> getAccounts(List<Account> accounts) {
     return ret_list;
 
 }
+
 // write extra class here 
 public with sharing class AcctWrapper implements Comparable {
         
@@ -41,13 +42,13 @@ public with sharing class AcctWrapper implements Comparable {
         if (acct.AnnualRevenue == null && otherAcct.acct.AnnualRevenue == null)
             retval = 0;
         else if (acct.AnnualRevenue != null && otherAcct.acct.AnnualRevenue == null)
-            retval = 1;
+            retval = -1;
         else if (acct.AnnualRevenue == null && otherAcct.acct.AnnualRevenue != null)
-            retval = -1;
-        else if (acct.AnnualRevenue > otherAcct.acct.AnnualRevenue)
             retval = 1;
-        else if (acct.AnnualRevenue < otherAcct.acct.AnnualRevenue)
+        else if (acct.AnnualRevenue > otherAcct.acct.AnnualRevenue)
             retval = -1;
+        else if (acct.AnnualRevenue < otherAcct.acct.AnnualRevenue)
+            retval = 1;
 
         return retval;
     }

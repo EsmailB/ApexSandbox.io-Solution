@@ -1,5 +1,6 @@
 public List<Account> getAccounts(List<Account> accounts) {
-        // code here #98 Apex Lang. Features
+
+        // code  here #98 Apex Lang. Features
         List<AcctWrapper> la = new List<AcctWrapper>();
 
         for (Account a: accounts)
@@ -10,7 +11,7 @@ public List<Account> getAccounts(List<Account> accounts) {
         return la;
     }
 
-ublic with sharing class AcctWrapper implements Comparable {
+public with sharing class AcctWrapper implements Comparable {
         
     public Account acct;
 

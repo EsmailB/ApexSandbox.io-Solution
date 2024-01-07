@@ -1,16 +1,22 @@
 public List<Account> getAccounts(List<Account> accounts) {
+    // code here
 
-        // code  here #98 Apex Lang. Features
-        List<AcctWrapper> la = new List<AcctWrapper>();
+    List<AcctWrapper> la = new List<AcctWrapper>();
 
-        for (Account a: accounts)
-            la.add(new AcctWrapper(a));
+    for (Account a: accounts)
+        la.add(new AcctWrapper(a));
 
-        la.sort();
-        System.debug('>>>> ' + la);
-        return la;
-    }
+    la.sort();
 
+    List<Account> ret_list = new List<Account>();
+    for(AcctWrapper a: la)
+        ret_list.add(a.acct);
+
+
+    return ret_list;
+
+}
+// write extra class here 
 public with sharing class AcctWrapper implements Comparable {
         
     public Account acct;

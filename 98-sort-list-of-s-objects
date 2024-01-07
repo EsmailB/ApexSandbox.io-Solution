@@ -1,4 +1,47 @@
 public List<Account> getAccounts(List<Account> accounts) {
-    // code here
+        // code here #98 Apex Lang. Features
+        List<AcctWrapper> la = new List<AcctWrapper>();
+
+        for (Account a: accounts)
+            la.add(new AcctWrapper(a));
+
+        la.sort();
+        System.debug('>>>> ' + la);
+        return la;
+    }
+
+ublic with sharing class AcctWrapper implements Comparable {
+        
+    public Account acct;
+
+    public AcctWrapper(Account ac) {
+    // Guard against wrapping a null 
+        if(ac == null) {
+            Exception ex = new NullPointerException();
+            ex.setMessage('Account argument cannot be null'); 
+            throw ex;
+        }
+        acct = ac;
+    }
+
+    public Integer compareTo(Object compareTo) {
+        // will sort by annual revenue - not this is not a required field
+
+        AcctWrapper otherAcct = (AcctWrapper) compareTo;
+        
+        Integer retval = 0;
+
+        if (acct.AnnualRevenue == null && otherAcct.acct.AnnualRevenue == null)
+            retval = 0;
+        else if (acct.AnnualRevenue != null && otherAcct.acct.AnnualRevenue == null)
+            retval = 1;
+        else if (acct.AnnualRevenue == null && otherAcct.acct.AnnualRevenue != null)
+            retval = -1;
+        else if (acct.AnnualRevenue > otherAcct.acct.AnnualRevenue)
+            retval = 1;
+        else if (acct.AnnualRevenue < otherAcct.acct.AnnualRevenue)
+            retval = -1;
+
+        return retval;
+    }
 }
-// write extra class here 

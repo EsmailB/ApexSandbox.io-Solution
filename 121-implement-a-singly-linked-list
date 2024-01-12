@@ -3,9 +3,6 @@ public class LinkedList{
     Node tail = null;
     Integer count = 0;
 
-    public LinkedList() {
-    }
-    
     public void print()
     {
         List<Integer> data = new List<Integer>();

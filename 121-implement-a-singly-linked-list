@@ -1,0 +1,98 @@
+public class LinkedList{
+   Node front = null;
+    Node tail = null;
+    Integer count = 0;
+
+    public LinkedList() {
+    }
+    
+    public void print()
+    {
+        List<Integer> data = new List<Integer>();
+        Node tmp = front;
+        while (tmp != null)
+            {
+                data.add(tmp.data);
+                tmp = tmp.next;
+            }
+        System.debug('>>>> ' + data);
+    }
+
+    public void addToFront(Integer value){
+        
+        Node newNode = new Node();
+        newNode.data = value;
+
+        if (count == 0) {
+            front = newNode;
+            newNode.next = null;
+            tail = newNode;
+        }
+        else {
+            newNode.next = front;
+            front = newNode;
+        }
+
+        count++;
+    }
+
+    public Integer removeFromFront(){
+        
+        if (front == null)
+            return null;
+        else {
+            Integer ret_val = front.data;
+            front = front.next;
+            count--;
+            return ret_val;
+        }
+    }
+
+    public void addToTail(Integer value){
+
+        Node newNode = new Node();
+        
+        if (front == null)
+            addToFront(value);
+        else {
+            newNode.data = value;
+            tail.next = newNode;
+            tail = tail.next;
+            count++;
+        }
+    }
+
+    public Integer removeFromTail(){
+        if (tail == null)
+            return null;
+        
+        Integer ret_val = tail.data;
+
+        if (tail == front) {
+            tail = null;
+            front = null;
+        }
+        else {
+            System.debug('>>>> finish'); // finish
+            Node temp = front;
+            while (temp.next != tail) 
+                temp = temp.next;
+
+            tail = temp;
+            tail.next = null;
+        }
+
+        count--;
+        return ret_val;
+    }
+
+    public Integer size(){
+        return count;
+    }    
+
+}        
+
+public class Node{
+    public Integer data;
+    public Node next;
+}

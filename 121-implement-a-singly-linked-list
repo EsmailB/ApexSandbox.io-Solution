@@ -89,5 +89,5 @@ public class LinkedList{
 
 public class Node{
     Integer data;
-    public Node next;
+    Node next;
 }

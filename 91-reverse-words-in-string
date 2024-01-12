@@ -6,7 +6,7 @@ public static String reverseWords(String str){
         rev_words.add(revWord(word));
 
     
-    return String.join(rev_words, '-');
+    return String.join(rev_words, ' ');
     }
 
 public static String revWord(String s) {

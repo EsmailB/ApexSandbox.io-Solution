@@ -1,0 +1,20 @@
+public static String reverseWords(String str){
+    List<String> words = str.split(' ');
+    List<String> rev_words = new List<String>();
+    
+    for (String word : words) 
+        rev_words.add(revWord(word));
+
+    
+    return String.join(rev_words, '-');
+    }
+
+public static String revWord(String s) {
+    List<Integer> chars = s.getChars();
+    List<Integer> new_chars = new List<Integer>();
+
+    for(Integer i = chars.size()-1; i >= 0; i--)
+        new_chars.add(chars[i]);
+
+    return String.fromCharArray(new_chars);
+}

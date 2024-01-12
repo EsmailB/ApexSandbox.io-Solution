@@ -2,7 +2,7 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
     Integer first = 0;
     Integer last = opportunities.size()-1;
 
-    while (first < last) {
+    while (first <= last) {
         Integer middle = (last - first) / 2;    
         
         if (target == opportunities[middle].Amount) 

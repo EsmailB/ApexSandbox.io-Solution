@@ -23,7 +23,7 @@ public class LinkedList{
         Node newNode = new Node();
         newNode.data = value;
 
-        if (count == 0) {
+        if (front == null) {
             front = newNode;
             newNode.next = null;
             tail = newNode;

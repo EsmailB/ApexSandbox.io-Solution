@@ -88,6 +88,6 @@ public class LinkedList{
 }        
 
 public class Node{
-    public Integer data;
+    Integer data;
     public Node next;
 }

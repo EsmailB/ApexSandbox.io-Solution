@@ -1,5 +1,5 @@
 public class LinkedList{
-   Node front = null;
+    Node head = null;
     Node tail = null;
     Integer count = 0;
 
@@ -9,7 +9,7 @@ public class LinkedList{
     public void print()
     {
         List<Integer> data = new List<Integer>();
-        Node tmp = front;
+        Node tmp = head;
         while (tmp != null)
             {
                 data.add(tmp.data);
@@ -23,14 +23,14 @@ public class LinkedList{
         Node newNode = new Node();
         newNode.data = value;
 
-        if (front == null) {
-            front = newNode;
+        if (head == null) {
+            head = newNode;
             newNode.next = null;
             tail = newNode;
         }
         else {
-            newNode.next = front;
-            front = newNode;
+            newNode.next = head;
+            head = newNode;
         }
 
         count++;
@@ -38,11 +38,11 @@ public class LinkedList{
 
     public Integer removeFromFront(){
         
-        if (front == null)
+        if (head == null)
             return null;
         else {
-            Integer ret_val = front.data;
-            front = front.next;
+            Integer ret_val = head.data;
+            head = head.next;
             count--;
             return ret_val;
         }
@@ -52,7 +52,7 @@ public class LinkedList{
 
         Node newNode = new Node();
         
-        if (front == null)
+        if (head == null)
             addToFront(value);
         else {
             newNode.data = value;
@@ -68,13 +68,12 @@ public class LinkedList{
         
         Integer ret_val = tail.data;
 
-        if (tail == front) {
+        if (tail == head) {
             tail = null;
-            front = null;
+            head = null;
         }
         else {
-            System.debug('>>>> finish'); // finish
-            Node temp = front;
+            Node temp = head;
             while (temp.next != tail) 
                 temp = temp.next;
 
@@ -88,8 +87,7 @@ public class LinkedList{
 
     public Integer size(){
         return count;
-    }    
-
+    }  
 }        
 
 public class Node{

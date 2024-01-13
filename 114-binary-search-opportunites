@@ -2,15 +2,19 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
     Integer first = 0;
     Integer last = opportunities.size()-1;
 
+
     while (first <= last) {
-        Integer middle = (last - first) / 2;    
-        
+        Integer middle = first + (last - first) / 2;    
+
         if (target == opportunities[middle].Amount) 
             return middle;
-        else if (target < opportunities[middle].Amount)
+        else if (target < opportunities[middle].Amount) {
             last = middle - 1;
-        else
+        }
+        else{
             first = middle + 1;
+        }
+
     }
     
     return -1;

@@ -53,6 +53,7 @@ public class LinkedList{
             addToFront(value);
         else {
             newNode.data = value;
+            newNode.next = null;
             tail.next = newNode;
             tail = tail.next;
             count++;

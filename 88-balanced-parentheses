@@ -9,10 +9,9 @@ public Boolean isValid(String s){
         for (String c : s.split('')) {
             if (isOpen(c))
                 st.push(c);
-            else {
+            else 
                 if (!isCorrectClose(c, (String) st.pop()))
                     return false;
-            }
         }   
 
         return true;

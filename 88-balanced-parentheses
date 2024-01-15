@@ -1,5 +1,4 @@
 public Boolean isValid(String s){
-    //code here 
 
     if (math.mod(s.length(), 2) != 0)
         return false;
@@ -10,7 +9,7 @@ public Boolean isValid(String s){
         if (isOpen(c))
             st.push(c);
         else 
-            if (!isCorrectClose(c, (String) st.pop()))
+            if (!isCorrectClose((String) st.pop(), c))
                 return false;
     }   
 
@@ -25,7 +24,7 @@ public static Boolean isOpen(String c){
         return false;
 }
 
-public static Boolean isCorrectClose(String close, String open){
+public static Boolean isCorrectClose(String open, String close){
 
     if (open == '(' && close == ')')
         return true;

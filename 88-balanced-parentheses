@@ -1,6 +1,6 @@
 public Boolean isValid(String s){
 
-    if (math.mod(s.length(), 2) != 0)
+    if (s.length() == 0 || math.mod(s.length(), 2) != 0)
         return false;
         
     Stack st = new Stack();

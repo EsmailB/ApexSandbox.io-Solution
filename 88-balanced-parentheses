@@ -1,5 +1,9 @@
 public Boolean isValid(String s){
         //code here 
+
+        if (math.mod(s.length(), 2) != 0)
+            return false;
+            
         Stack st = new Stack();
 
         for (String c : s.split('')) {

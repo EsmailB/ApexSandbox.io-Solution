@@ -41,44 +41,45 @@ public static Boolean isCorrectClose(String close, String open){
 
 public with sharing class Stack {
 
-List<Object> s = new List<Object>();
+    List<Object> s = new List<Object>();
 
-public Stack() {}
+    public Stack() {}
 
 
-public void push(Object obj) {
-    //implement push  ###############
-    if (s.size() == 0)
-        s.add(obj);
-    else
-        s.add(0, obj);
-}
+    public void push(Object obj) {
+        //implement push  ###############
+        if (s.size() == 0)
+            s.add(obj);
+        else
+            s.add(0, obj);
+    }
 
-public Object pop() {
-    //implement pop   #################
-    Object val = null;
-    
-    if (s.size() > 0)
-        val = s.remove(0);
-    
-    return val;
-}
+    public Object pop() {
+        //implement pop   #################
+        Object val = null;
+        
+        if (s.size() > 0)
+            val = s.remove(0);
+        
+        return val;
+    }
 
-public Integer size() {
-    //implement size ############
-    return s.size();
-}
+    public Integer size() {
+        //implement size ############
+        return s.size();
+    }
 
-public Object peek(){
-    //implement peek ############
+    public Object peek(){
+        //implement peek ############
 
-    if (s.size() > 0)
-        return s[0];
+        if (s.size() > 0)
+            return s[0];
 
-    return null;
-}
+        return null;
+    }
 
-public Boolean isEmpty() {
-    //implement isEmpty ###########
-    return s.isEmpty();
+    public Boolean isEmpty() {
+        //implement isEmpty ###########
+        return s.isEmpty();
+    }
 }

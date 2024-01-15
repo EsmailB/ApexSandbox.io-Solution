@@ -1,85 +1,84 @@
 public Boolean isValid(String s){
-        //code here 
+    //code here 
 
-        if (math.mod(s.length(), 2) != 0)
-            return false;
-            
-        Stack st = new Stack();
-
-        for (String c : s.split('')) {
-            if (isOpen(c))
-                st.push(c);
-            else 
-                if (!isCorrectClose(c, (String) st.pop()))
-                    return false;
-        }   
-
-        return true;
-    }
-
-    public static Boolean isOpen(String c){
-        
-        if (c == '(' || c == '{' || c == '[' )
-            return true;
-        else 
-            return false;
-    }
-
-    public static Boolean isCorrectClose(String close, String open){
-
-        if (open == '(' && close == ')')
-            return true;
-        else  if (open == '[' && close == ']')
-            return true;
-        else  if (open == '{' && close == '}')            
-            return true;
-
+    if (math.mod(s.length(), 2) != 0)
         return false;
-    }
+        
+    Stack st = new Stack();
+
+    for (String c : s.split('')) {
+        if (isOpen(c))
+            st.push(c);
+        else 
+            if (!isCorrectClose(c, (String) st.pop()))
+                return false;
+    }   
+
+    return true;
+}
+
+public static Boolean isOpen(String c){
+    
+    if (c == '(' || c == '{' || c == '[' )
+        return true;
+    else 
+        return false;
+}
+
+public static Boolean isCorrectClose(String close, String open){
+
+    if (open == '(' && close == ')')
+        return true;
+    else  if (open == '[' && close == ']')
+        return true;
+    else  if (open == '{' && close == '}')            
+        return true;
+
+    return false;
+}
 
 
 
 public with sharing class Stack {
-    
-    List<Object> s = new List<Object>();
 
-    public Stack() {}
+List<Object> s = new List<Object>();
 
-    
-    public void push(Object obj) {
-        //implement push  ###############
-        if (s.size() == 0)
-            s.add(obj);
-        else
-            s.add(0, obj);
-    }
-    
-    public Object pop() {
-        //implement pop   #################
-        Object val = null;
-        
-        if (s.size() > 0)
-           val = s.remove(0);
-        
-        return val;
-    }
-    
-    public Integer size() {
-        //implement size ############
-        return s.size();
-    }
-    
-    public Object peek(){
-        //implement peek ############
+public Stack() {}
 
-        if (s.size() > 0)
-            return s[0];
+
+public void push(Object obj) {
+    //implement push  ###############
+    if (s.size() == 0)
+        s.add(obj);
+    else
+        s.add(0, obj);
+}
+
+public Object pop() {
+    //implement pop   #################
+    Object val = null;
     
-        return null;
-    }
+    if (s.size() > 0)
+        val = s.remove(0);
     
-    public Boolean isEmpty() {
-        //implement isEmpty ###########
-        return s.isEmpty();
-    }
+    return val;
+}
+
+public Integer size() {
+    //implement size ############
+    return s.size();
+}
+
+public Object peek(){
+    //implement peek ############
+
+    if (s.size() > 0)
+        return s[0];
+
+    return null;
+}
+
+public Boolean isEmpty() {
+    //implement isEmpty ###########
+    return s.isEmpty();
 }

@@ -16,7 +16,7 @@ public Boolean isValid(String s){
     return true;
 }
 
-public static Boolean isOpen(String c){
+public Boolean isOpen(String c){
     
     if (c == '(' || c == '{' || c == '[' )
         return true;
@@ -24,7 +24,7 @@ public static Boolean isOpen(String c){
         return false;
 }
 
-public static Boolean isCorrectClose(String open, String close){
+public Boolean isCorrectClose(String open, String close){
 
     if (open == '(' && close == ')')
         return true;

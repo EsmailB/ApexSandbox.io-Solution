@@ -8,7 +8,7 @@ public Boolean isValid(String s){
     for (String c : s.split('')) {
         if (isOpen(c))
             st.push(c);
-        else 
+        else // closing bracket
             if (!isCorrectClose((String) st.pop(), c))
                 return false;
     }   
@@ -18,10 +18,7 @@ public Boolean isValid(String s){
 
 public Boolean isOpen(String c){
     
-    if (c == '(' || c == '{' || c == '[' )
-        return true;
-    else 
-        return false;
+    return c == '(' || c == '{' || c == '[';
 }
 
 public Boolean isCorrectClose(String open, String close){

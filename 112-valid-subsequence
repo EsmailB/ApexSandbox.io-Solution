@@ -1,0 +1,15 @@
+public Boolean isSubSequence(String s1, String s2){
+    //code here
+    Integer count = 0;
+    Integer start_j = 0;
+
+    for(Integer i = 0; i < s1.length(); i++) 
+        for(Integer j = start_j; j < s2.length(); j++) 
+            if (s1.charAt(i)  == s2.charAt(j)) {
+                count++;
+                start_j = j;
+                break;
+            }
+
+    return count == s1.length();    
+}

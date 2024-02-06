@@ -8,8 +8,8 @@ public Boolean isPassed(Boolean passedExam, Boolean passedAssignments, Boolean p
     if(passedProject)
         value += 1;
     
-    if (value >= 2)
-        return true;
+    return (value >= 2);
+        // return true;
     
-    return false;
+   //  return false;
 }

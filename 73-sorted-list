@@ -24,4 +24,3 @@ public boolean isDescending(List<Integer> numbers) {
     
     return true;
 }
-}

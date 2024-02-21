@@ -3,7 +3,7 @@ public Integer secondLargest(List<Integer> numbers) {
         // change to set to eliminate duplicates
         Set<Integer> num_set = new Set<Integer>(numbers);
 
-        // change back to numbers so I can sort
+        // change back to list of Integers I can sort
         List<Integer> new_list = new List<Integer>(num_set);
         new_list.sort();
         return new_list[new_list.size()-2];

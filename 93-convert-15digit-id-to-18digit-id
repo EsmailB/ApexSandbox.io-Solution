@@ -1,0 +1,56 @@
+public String convert15to18DigitId(String fifteenDigit)
+{
+   // convert input ID into 3 chunks of 5 and reverse
+        String a = fifteenDigit.substring(0, 5).reverse();
+        String b = fifteenDigit.substring(5, 10).reverse();
+        String c = fifteenDigit.substring(10, 15).reverse();
+        
+        // Replace each character in every chunk by 1 if it's uppercase 
+        // or by 0 if otherwise.
+        String aa = turnBin(a);
+        String bb = turnBin(b);
+        String cc = turnBin(c);
+
+        // user the index IDX to look up correct character
+        String key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ012345';
+        Integer aIdx = binStr2int(aa);
+        Integer bIdx = binStr2int(bb);
+        Integer cIdx = binStr2int(cc);
+
+        String result = key.substring(aIdx, aIdx+1) + key.substring(bIdx, bIdx+1) + key.substring(cIdx, cIdx+1);
+        return fifteenDigit + result;
+    }
+
+    // Replace each character in every chunk by 1 if it's uppercase 
+    // or by 0 if otherwise.
+    public static String turnBin(String str) {
+
+        String result = '';
+
+        for (Integer i = 0; i < str.length(); i++) {
+            if(str.substring(i, i+1).isAllUpperCase())
+                result += '1';
+            else 
+                result += '0';
+        }
+
+        return result;
+    }
+
+
+    // convert a 5 bit binary String to an Integer
+    // fist char is the MSB
+    public static Integer binStr2int(String s)
+    {
+        Double value = 0;
+        integer exp = 1;
+
+        for(Integer i = s.length()-1; i >= 0; i--) {
+            Integer num = s.substring(i, i+1)=='1'?1:0;
+            value += num * exp;
+            exp *= 2;
+        }
+
+        return (Integer) value;
+    } 
+}

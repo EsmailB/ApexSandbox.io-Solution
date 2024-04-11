@@ -6,9 +6,9 @@ public String convert15to18DigitId(String fifteenDigit)
 
    // convert input ID into 3 chunks of 5 and reverse
 
-        if (fifteenDigit.length() <15)
+        if (fifteenDigit == null ||  fifteenDigit.length() <15)
             return '-1';
-            
+
         String a = fifteenDigit.substring(0, 5).reverse();
         String b = fifteenDigit.substring(5, 10).reverse();
         String c = fifteenDigit.substring(10, 15).reverse();

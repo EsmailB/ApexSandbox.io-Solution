@@ -20,7 +20,7 @@ public String convert15to18DigitId(String fifteenDigit)
     String cc = turnBin(c);
 
     // user the index IDX to look up correct character
-    String key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ012345';
+    final String key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ012345';
     Integer aIdx = binStr2int(aa);
     Integer bIdx = binStr2int(bb);
     Integer cIdx = binStr2int(cc);

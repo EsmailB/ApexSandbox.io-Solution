@@ -1,13 +1,18 @@
 public String changeTimeFormat(String strTime) {
     //code here
+    //code here #79 (Apex 101)//code here
     List<String> parts = strTime.split(':');
     Integer hour = Integer.valueOf(parts[0]);
     Integer min = Integer.valueOf(parts[1]);
+    System.debug('>>>* ' + hour);
 
     String post = ' AM';
     if (hour > 12) {
         post = ' PM';
         hour -= 12;
+        System.debug('>>>> ' + hour);
+        if (hour == 0)
+            hour = 12;
     }
 
     String hourStr = hour < 10? '0'+ String.valueOf(hour): String.valueOf(hour);

@@ -11,10 +11,10 @@ public String changeTimeFormat(String strTime) {
             hour = 12;
         else if (hour >= 12) {
             post = ' PM';
-            hour -= 12;
+            if (hour > 12)
+                hour -= 12;
             System.debug('>>>> ' + hour);
         }
-
         
 
         String hourStr = hour < 10? '0'+ String.valueOf(hour): String.valueOf(hour);

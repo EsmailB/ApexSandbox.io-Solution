@@ -6,7 +6,7 @@ public String changeTimeFormat(String strTime) {
         System.debug('>>>* ' + hour);
 
         String post = ' AM';
-        if (hour > 12) {
+        if (hour >= 12) {
             post = ' PM';
             hour -= 12;
             System.debug('>>>> ' + hour);

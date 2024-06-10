@@ -1,6 +1,11 @@
 public String reverseWordsInASentence(String sentence){
     //your flawless code here
+
+    
+    if (!sentence)
+        return sentence;
     String[] s = sentence.split(' ');
+    
     String[] s2 = new List<String>();
 
     for(Integer i = s.size()-1; i >= 0; i--) {

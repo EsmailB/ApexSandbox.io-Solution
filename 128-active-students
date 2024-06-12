@@ -1,12 +1,12 @@
 public List<apxio__Student__c> selectActiveStudents() {
     // code here
 
-    List<apxio__Student__c> stus = new List<apxio__Student__c>();
-    
-    // Make sure the students have a value in the Id and Name fields.
-    for(apxio__Student__c s : [SELECT name, Id FROM apxio__Student__c WHERE apxio__Active__c = true])
-        if (s.name != null & s.id != null)
-            stus.add(s);
+        List<apxio__Student__c> stus = [
+            SELECT Id, Name FROM apxio__Student__c 
+            WHERE apxio__Active__c = TRUE ];
 
-    return stus;
+        if (stus.size() > 0)
+            return stus;
+        else 
+            return null;
 }

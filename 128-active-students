@@ -5,11 +5,9 @@ public List<apxio__Student__c> selectActiveStudents() {
 
         for(apxio__Student__c s : [SELECT Id, Name FROM apxio__Student__c WHERE apxio__Active__c = TRUE])
         {
-            if (s.name != null)
+        if (String.isBlank(s.name))
                 result.add(s);
         }
-
-        return result;
 
         if (result.size() > 0)
             return result;

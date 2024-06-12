@@ -1,20 +1,17 @@
 public Id insertCourse(String name, String details, Integer credits) {
     // code here
+        Id ret_val = null;
 
-    apxio__Course__c course = new apxio__Course__c();
-    course.name = name;
-    course.apxio__Course_Details__c = details;
+        if ( credits >= 1 && credits <= 4)
+        {
+            apxio__Course__c course = new apxio__Course__c();
+            course.Name = name;
+            course.apxio__Course_Details__c = details;
+            course.apxio__Credits__c = credits.toString();
 
-    // docs also include 0
-    // apxio__Credits__c	Picklist	Valid values include 0, 1, 2, 3, and 4
+            insert course;
+            ret_val = course.Id;
+        }
 
-    if (credits >= 1 && credits <=4)
-    {
-        course.apxio__Credits__c = String.valueOf(credits);
-    
-        insert(course);
-        return course.id;
-    }
-    
-    return null;
+        return ret_val;
 }

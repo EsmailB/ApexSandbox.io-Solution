@@ -10,6 +10,6 @@ public String registerStudent(String name, String phone, String email) {
 
         List <apxio__Student__c> stulist = [select apxio__Registration_Number__c 
                                             from  apxio__Student__c where id = :stu.Id];
-        return stulist[0].toString();
+        return stulist[0].apxio__Registration_Number__c;
  
 }

@@ -10,10 +10,3 @@ public List<apxio__Student__c> selectActiveStudents() {
         }
 
         return result;
-        /*
-        if (result.size() > 0)
-            return result;
-        else 
-            return null;
-            */
-}

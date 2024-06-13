@@ -5,7 +5,7 @@ public List<apxio__Student__c> selectUnreachableStudents() {
         for(apxio__Student__c s : [SELECT Id, Name, apxio__Phone__c, apxio__Email__c 
                                    FROM apxio__Student__c WHERE apxio__Active__c = TRUE])
         //if (String.isBlank(s.apxio__Phone__c) && String.isBlank(s.apxio__Email__c))
-            if (s.apxio__Phone__c == null  || s.apxio__Email__c == null)
+            if (s.apxio__Phone__c == null  && s.apxio__Email__c == null)
                 result.add(s);        
 
         System.debug('>>>> in func -- size: ' + result.size());

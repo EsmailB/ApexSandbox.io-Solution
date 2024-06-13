@@ -1,6 +1,5 @@
 public List<apxio__Student__c> selectUnreachableStudents() {
     // code here
-
         List<apxio__Student__c> result = new List<apxio__Student__c>();
         
         for(apxio__Student__c s : [SELECT Id, Name, apxio__Phone__c, apxio__Email__c 

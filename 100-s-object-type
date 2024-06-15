@@ -2,7 +2,7 @@ public Boolean isTypeAccount(sObject record)
 {
     // code here
 
-    if (record.isInstanceOf(Account))
+    if (record instanceof  Account)
         return true;
 
     return false;

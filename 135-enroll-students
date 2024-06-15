@@ -1,0 +1,19 @@
+public void enrollStudents(List<String> emails, String className) {
+    // code here
+                    
+    // first find the class
+    List<apxio__Class__c> theClass = [SELECT Id, Name FROM apxio__Class__c WHERE Name = :className];
+    if (theClass.size() == 1) { // found the class
+        // find all students now
+        List<apxio__Student__c> students = [SELECT Id, apxio__Email__c FROM apxio__Student__c where apxio__Email__c IN :emails];
+
+        // add students to class
+        if (students.size() > 0) { 
+            apxio__Class_Enrollment__c enroll = new apxio__Class_Enrollment__c();
+            for (apxio__Student__c s : students) {
+                enroll.apxio__Student__c = s.Id;
+                enroll.apxio__Offered_Class__c = theClass[0].Id;
+            }
+        }
+    }
+}

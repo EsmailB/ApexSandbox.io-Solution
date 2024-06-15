@@ -1,14 +1,9 @@
 public String divide(Integer a, Integer b){
     //code here
-
-    Integer result = 0;
     try {
-        result = a / b;
+        String result = (a / b).toString();
+        return result;
+    } catch (Exception ex) {
+        return ex.getMessage();
     }
-    catch(Exception e)
-    {
-        return e.getMessage();
-    }
-
-    return String.valueOf(result);
 }

@@ -5,7 +5,7 @@ public List<Account> getAccountsFromJSONString(String inputJSON){
     
 //      Object tmpAccts = JSON.deserializeStrict(inputJSON, Account.class);
 
-    List<Account> result = (List<Account>) JSON.deserialize(inputJSON, Account.class);
+    List<Account> result = (List<Account>) JSON.deserialize(inputJSON, List<Account>.class);
 
     return result;    
 }

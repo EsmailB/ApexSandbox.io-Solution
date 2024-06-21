@@ -1,14 +1,8 @@
 public void validateInsert(List<Opportunity> opportunities){
     //code here
-    for(Opportunity opp : opportunities)
-    {
-        // StageName is 'Closed Won' and the Description is null or empty,
-        // add an error on the Description field of that record with the
-        // error message set to 
-        // 'Description should not be empty for Closed Won opportunity.'.
-
-        if (opp.StageName == 'Closed Won' && String.isBlank(opp.Description))
-            opp.Description.addError('Description should not be empty for Closed Won opportunity.');
-
-    }    
+    
+    for (Opportunity op : opportunities) {
+        if (op.StageName == 'Closed Won' && String.isBlank(op.Description))
+            op.addError('Description should not be empty for Closed Won opportunity.');
+    }
 }
